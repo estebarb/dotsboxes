@@ -1,0 +1,12 @@
+/.settings
+.classpath
+.project
+/target
+/build
+.DS_Store
+
+# Otros archivos
+*.class
+*.jar
+*.war
+*.ear
