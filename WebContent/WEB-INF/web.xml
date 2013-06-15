@@ -9,16 +9,27 @@
 	</welcome-file-list>
 
 	<!-- Servlet que maneja la API -->
+	<!-- <servlet> <servlet-name>ServletTest</servlet-name> <servlet-class>ingsoft2.ServletTest</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>ServletTest</servlet-name> <url-pattern>/api/*</url-pattern> 
+		</servlet-mapping> -->
+
+
+	<display-name>de.vogella.jersey.first</display-name>
 	<servlet>
-		<servlet-name>ServletTest</servlet-name>
-		<servlet-class>ingsoft2.ServletTest</servlet-class>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>de.vogella.jersey.first</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ServletTest</servlet-name>
-		<url-pattern>/api/*</url-pattern>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>/static/*</url-pattern>
