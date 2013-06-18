@@ -14,29 +14,27 @@
 	src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="//cdnjs.cloudflare.com/ajax/libs/d3/3.1.6/d3.min.js"></script>
-<script type="text/javascript" src="/jugar/JugarController.js"></script>
+<script type="text/javascript" src="/app/controllers/JugarController.js"></script>
 </head>
 <body ng-controller="JugarController">
 	<h1>Jugar</h1>
 	<p>Escriba el tamaño del tablero que desea utilizar:</p>
 	<ul>
 		<li>Filas: <input type="number" placeholder="Número de filas"
-			max="16" min="2" value="6" ng-model="numFilas"/></li>
+			max="16" min="2" value="6" ng-model="numFilas" /></li>
 		<li>Columnas: <input type="number"
 			placeholder="Número de columnas" max="16" min="2" value="6"
-			ng-model="numCols"/></li>
+			ng-model="numCols" /></li>
 	</ul>
-	<p>El juego a generar tendrá {{numFilas}} filas y {{numCols}}
-		columnas. <button ng-click="UpdateSize()">Actualizar</button></p>
-	
-<div id="GameArena" style="width:100%">
-<div ng-repeat="filas in tablero">
-{{filas}}
-</div>
-</div>
+	<p>
+		El juego a generar tendrá {{numFilas}} filas y {{numCols}} columnas.
+		<button ng-click="UpdateSize()">Actualizar</button>
+	</p>
 
-	 <div id="gameData">
-	 {{tablero}}
-	 </div>
+
+	<h2>Canva del juego</h2>
+	<game-canvas gamedata="{{tablero}}"></game-canvas>
+
+	<div ng-repeat="filas in tablero">{{filas}}</div>
 </body>
 </html>
